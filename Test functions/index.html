@@ -1,16 +1,91 @@
+<!-- index.html -->
+
+<!-- Website Intro -->
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Website</title>
-	<style>
-		body {
-			background-image: url('Speed[SMP].png');
-			background-size: cover;
-		}
-	</style>
+	<title>My YouTube Profile</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<!-- Your content goes here -->
+    <header>
+        <img src="C:\Users\speed\Desktop\Test Website\Pics\Speedstar101.png" alt="Profile Picture">
+        <h1>SpeedStar101's Website</h1>
+        
+        <div class="blurred-background"></div>
+        <!-- hamburger-icon -->
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="https://www.instagram.com/_speedstar101_/">Instagram</a></li>
+            <li><a href="https://www.twitch.tv/speedstar101_">Twitch</a></li>
+            <li><a href="https://kick.com/speedstar101">Kick</a></li>
+          </ul>
+        </nav>
+    </header>
+    <script src="menu.js"></script>
+
+    <!-- Youtube Panel -->
+    <section>
+        <h2>About My Youtube Channel</h2>
+        <p>
+          My YouTube channel focuses on Minecraft content, with regular weekend streams and Let's Play videos. I have been creating content for five years and enjoy a variety of games, including scary games, first-person shooters, and fun mini-games. I also stream on other platforms such as Twitch and Kick.!
+        </p>
+        <div class="youtube-panel">
+          <!--<iframe width="560" height="315" src="https://www.youtube.com/watch?v=JMXAkZXvNyU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+          <a href="https://www.youtube.com/@SpeedStar101">
+          <img src="C:\Users\speed\Desktop\Test Website\Pics\Youtibe logo neon.jpg" alt="Youtube Picture">
+          </a>
+          <p>Youtube</p>
+        </div>
+    </section>
+    <section>
+      <h2>Preview of My Latest Video</h2>
+      <div id="video-preview"></div>
+    </section>
+    
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      // Load the YouTube Player API
+      var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+      // Create the YouTube player
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('video-preview', {
+          height: '315',
+          width: '560',
+          videoId: 'JMXAkZXvNyU',
+          playerVars: {
+            'autoplay': 1,
+            'loop': 1,
+            'mute': 1,
+            'controls': 0,
+            'showinfo': 0,
+            'rel': 0,
+            'iv_load_policy': 3,
+            'modestbranding': 1
+          },
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      }
+    
+      // Set the player to start playing when it's ready
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+    </script>
+    
+    
+
 </body>
 </html>
-
