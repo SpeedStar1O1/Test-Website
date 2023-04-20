@@ -1,3 +1,5 @@
+// Menu.js JavaScript
+
 
 // Hamburger icon effect
 document.addEventListener('DOMContentLoaded', function() {
