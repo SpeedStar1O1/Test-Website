@@ -1,0 +1,158 @@
+<!-- HTML5 index.html -->
+
+<!-- Website Intro -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My YouTube Profile</title>
+
+  <meta charset="UTF-8">
+  <meta name="desciption" content="SpeedStar101's First Website">
+  <meta name="keywords" content="SpeedStar101, YouTube, funny, fun, social media">
+  <meta name="author" content="SpeedStar101">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-saPpMaKg0DILn+m1Jzr/fEHPH8mzxxptDEJGn0zMYpVsZI8c+UnInovc+cOGN45Jf1j+luCvNp9M5/+5/EtJ5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <header>
+
+        <img src="Speedstar101.png" alt="Profile Picture">
+        <h1>SpeedStar101's Website</h1>
+
+        <!-- Blurred Backgorund (Minecraft Screenshot)-->
+        <div class="blurred-background"></div>
+
+        <!-- hamburger-icon -->
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+            <li><a href="https://www.instagram.com/_speedstar101_/" style="color: rgb(255, 0, 247);"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.twitch.tv/speedstar101_" style="color: rgb(140, 0, 255);"><i class="fab fa-twitch"></i></a></li>
+            <li><a href="https://kick.com/speedstar101" style="color: rgb(0, 255, 13);"><i class="fab fa-kickstarter"></i></a></li>
+            <li><a href="https://github.com/SpeedStar1O1" style="color: grey;"><i class="fab fa-github"></i></a></li>
+          </ul>
+        </nav>
+    </header>
+    <script src="menu.js"></script>
+
+    <!-- Youtube Panel -->
+    <section>
+        <h2>About My Youtube Channel</h2>
+        <p>
+          My YouTube channel focuses on Minecraft content, with regular weekend streams and Let's Play videos.
+          I have been creating content for five years and enjoy a variety of games, including scary games, first-person shooters, and fun mini-games. 
+          I also stream on other platforms such as Twitch and Kick!
+        </p>
+        <div class="youtube-panel">
+          <!--<iframe width="560" height="315" src="https://www.youtube.com/watch?v=JMXAkZXvNyU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+          <a href="https://www.youtube.com/@SpeedStar101" title="This takes you to SpeedStar101's YouTube channel">
+          <img src="Youtibe logo neon.jpg" alt="Youtube Picture">
+          </a>
+          <p>Youtube</p>
+        </div>
+    </section>
+
+    <!-- Video Preview -->
+    <section>
+      <h2>Preview of My Latest Video</h2>
+      <div id="video-preview"></div>
+    </section>
+    
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script>
+      // Load the YouTube Player API
+      var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+      // Create the YouTube player
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('video-preview', {
+          height: '315',
+          width: '560',
+          videoId: 'JMXAkZXvNyU',
+          playerVars: {
+            'autoplay': 1,
+            'loop': 10,
+            'mute': 1,
+            'controls': 0,
+            'showinfo': 0,
+            'rel': 0,
+            'iv_load_policy': 3,
+            'modestbranding': 1
+          },
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      }
+    
+      // Set the player to start playing when it's ready
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+    </script>
+
+    <section>
+      <h2> My YouTube Video upload & Live Stream Schedule</h2>
+      <!-- Table Schedule -->
+      <table>
+
+        <!-- Days Of The Week -->
+        <tr>
+          <th>Days</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Firday</th>
+          <th>Saturday</th>
+          <th>Sunday</th>
+        </tr>
+
+        <!-- Video Upload Times -->
+        <tr>
+          <th>Video Uploads Times</th>
+          <th>15:00</th>
+          <th>n/a</th>
+          <th>n/a</th>
+          <th>n/a</th>
+          <th>15:00</th>
+          <th>n/a</th>
+          <th>n/a</th>
+        </tr2>
+
+        <!-- Live Stream Times -->
+        <tr>
+          <th>Live Streams Times</th>
+          <th>n/a</th>
+          <th>n/a</th>
+          <th>n/a</th>
+          <th>20:00-00:00</th>
+          <th>20:00-00:00</th>
+          <th>20:00-00:00</th>
+          <th>n/a</th>
+        </tr>
+
+      </table>
+
+    </section>
+    
+    
+
+</body>
+</html>
